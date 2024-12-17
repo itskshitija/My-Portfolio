@@ -1,0 +1,758 @@
+/**********************************/
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #666666;
+    background: #f9f6f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #222222;
+    transition: all .3s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #73bffb;
+    outline: none;
+    text-decoration: none;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+
+/**********************************/
+/****** Layout with Sidebar *******/
+/**********************************/
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1140px;
+}
+
+.wrapper .sidebar {
+    position: relative;
+    width: 100%;
+    float: left;
+    background: #183153;
+}
+
+.wrapper .content {
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    float: left;
+    background:#f9f6f3;
+}
+
+.wrapper .sidebar-header,
+.wrapper .sidebar-footer {
+    display: none;
+}
+
+.navbar {
+    padding: 15px;
+    background: #183153 !important;
+}
+
+.navbar-expand-md .navbar-nav .nav-item {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.navbar-expand-md .navbar-nav .nav-item:first-child{
+    border-top: none;
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+    color: #ffffff;
+    padding: 5px 15px 7px 15px;
+    transition: all .3s;
+}
+
+.navbar-expand-md .navbar-nav .nav-link i {
+    color: #ffd43b;
+    float: right;
+    padding-top: 5px;
+    transition: all .3s;
+}
+
+.navbar-expand-md .navbar-nav .nav-link:hover,
+.navbar-expand-md .navbar-nav .nav-link.active {
+    color:#ffd43b;
+}
+
+.navbar-expand-md .navbar-nav .nav-link:hover i,
+.navbar-expand-md .navbar-nav .nav-link.active i{
+    color: #ffffff;
+}
+
+
+.wrapper .sidebar,
+.wrapper .content {
+    -webkit-transition: margin 200ms ease-out;
+    -moz-transition: margin 200ms ease-out;
+    -o-transition: margin 200ms ease-out;
+    transition: margin 200ms ease-out;
+}
+
+@media (min-width: 768px) {
+    .wrapper .content {
+        padding: 30px 0px 30px 30px;
+    }
+    
+    .wrapper .content::before,
+    .wrapper .content::after {
+        position: fixed;
+        content: "";
+        width: 100%;
+        height: 30px;
+        background:#f9f6f3;
+        z-index: 1;
+    }
+    
+    .wrapper .content::before {
+        top: 0;
+    }
+    
+    .wrapper .content::after {
+        bottom: 0;
+    }
+    
+    .wrapper .sidebar {
+        position: fixed;
+        width: 300px;
+        height: 100%;
+        margin-left: -250px;
+        float: left;
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: gray;
+        z-index: 2;
+    }
+
+    .wrapper .sidebar:hover {
+        margin-left: 0px;
+    }
+    
+    .wrapper .content {
+        position: relative;
+        width: calc(100% - 50px);
+        margin-left: 50px;
+        float: right;
+    }
+    
+    .wrapper .sidebar:hover  .sidebar-header {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    .wrapper .sidebar .sidebar-header img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .navbar-brand {
+        display: none;
+    }
+    
+    .navbar {
+        padding: 15px 0;
+        flex-direction: column;
+    }
+    
+    .wrapper .sidebar:hover .navbar-expand-md .navbar-nav .nav-link {
+        padding: 5px 30px 7px 30px;
+    }
+    
+    .wrapper .sidebar::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .wrapper .sidebar::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    }
+
+    .wrapper .sidebar::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+        border-radius: 7px
+    }
+    
+    .navbar-brand {
+        display: none;
+    }
+    
+    .sidebar .sidebar-footer {
+        width: 300px;
+        position: fixed;
+        bottom: 0;
+        padding: 15px;
+        font-size: 0;
+        text-align: center;
+        background: #183153;
+    }
+    
+    .sidebar .sidebar-footer a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 5px 0;
+        margin: 0 15px 15px 0;
+        text-align: center;
+        font-size: 25px;
+        color: #183153;
+        background: #ffd43b;
+        border-radius: 33%;
+    }
+    
+    .sidebar .sidebar-footer a:last-child {
+        margin-right: 0;
+    }
+    
+    .sidebar .sidebar-footer a:hover {
+        color: #ffd43b;
+        background: #ffffff;
+    }
+    
+    .sidebar:hover .sidebar-footer {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper .sidebar {
+        margin: 0;
+    }
+
+    .wrapper .content {
+        width: calc(100% - 300px);
+        margin-left: 300px;
+    }
+
+    .sidebar .sidebar-header {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding: 5px 30px 7px 30px;
+    }
+    
+    .sidebar .sidebar-footer {
+        display: block;
+    }
+}
+
+@media (max-width: 1140px) {
+    .wrapper .content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper .content {
+        padding: 15px;
+    }
+}
+
+
+/**********************************/
+/******** Back to Top CSS *********/
+/**********************************/
+.back-to-top {
+    position: fixed;
+    display: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 1;
+    font-size: 30px;
+    right: 30px;
+    bottom: 30px;
+    transition: background 0.5s;
+    z-index: 11;
+}
+
+.back-to-top i {
+    color: #222222;
+}
+
+.back-to-top i:hover {
+    color: #ffd43b;
+}
+
+.back-to-top {
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+
+/**********************************/
+/*********** Header CSS ***********/
+/**********************************/
+.header {
+    position: relative;
+    background: #ffffff;
+}
+
+.header .content-inner {
+    padding: 100px 30px;
+    /* background: url(../img/profile.png) right bottom no-repeat; */
+    background-size: contain;
+}
+
+.header p {
+    color: #73bffb;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    color:#183153;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.header h2 {
+    display: inline-block;
+    margin: 0;
+    height: 25px;
+    font-size: 25px;
+}
+
+.header .typed-text {
+    display: none;
+}
+
+.header .typed-cursor {
+    font-size: 25px;
+    font-weight: 300;
+    color: #222222;
+}
+
+.large-btn .content-inner {
+    font-size: 0;
+    border-bottom: 30px solid #ffd43b;
+}
+
+.large-btn .btn {
+    position: relative;
+    width: 50%;
+    padding: 15px 0;
+    color: #183153;
+    font-size: 20px;
+    background: #73bffb;
+    border-radius: 0;
+}
+
+.large-btn .btn:last-child {
+    color: #ffffff;
+    background: #183153;
+}
+
+.large-btn .btn i {
+    margin-right: 8px;
+}
+
+.large-btn .btn::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+
+.large-btn .btn:hover::after {
+    width: 100%;
+    background: rgba(255, 255, 255, .1);
+}
+
+
+/**********************************/
+/******* Content Header CSS *******/
+/**********************************/
+.content-header {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.content-header h2 {
+    color: #222222;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.content-header::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: #183153;
+}
+
+
+/**********************************/
+/*********** About CSS ************/
+/**********************************/
+.about {
+    position: relative;
+    padding: 60px 30px;
+    background: #ffffff;
+    border-bottom: 30px solid #ffd43b;
+}
+
+
+.about img {
+    width: 100%;
+    height: auto;
+}
+
+@media(max-width: 767.98px) {
+    .about img {
+        margin-bottom: 15px;
+    }
+}
+
+.about .btn {
+    border-radius: 0;
+    color: #ffffff;
+    background: #183153;
+    transition: all .3s;
+}
+
+.about .btn:hover {
+    color: #ffd43b;
+    background: #183153;
+}
+
+.about .skills {
+    padding-top: 15px;
+}
+
+.about .skill-name {
+    margin-top: 15px;
+}
+
+.about .skill-name p {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.about .skill-name p:last-child {
+    float: right;
+}
+
+.about .progress {
+    height: 5px;
+    border: 1px solid #183153;
+    border-radius: 0;
+    background: #ffffff;
+}
+
+.about .progress .progress-bar {
+    width: 1px;
+    background: #183153;
+    border-radius: 0;
+    transition: 1s;
+}
+
+/**********************************/
+/********* Experience CSS *********/
+/**********************************/
+.experience {
+    position: relative;
+    padding: 60px 30px;
+    background: #ffffff;
+    border-bottom: 30px solid #ffd43b;
+}
+
+.experience .exp-col {
+    position: relative;
+    width: 100%;
+    padding: 20px 0 20px 20px;
+    border-left: 1px solid #74c0fc;
+    border-bottom: 1px solid #74c0fc;
+}
+
+.experience .col-md-6:first-child .exp-col {
+    padding-top: 0;
+}
+
+.experience .col-md-6:last-child .exp-col {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .experience .col-md-6:nth-child(-n+2) .exp-col {
+        padding-top: 0;
+    }
+
+    .experience .col-md-6:last-child .exp-col,
+    .experience .col-md-6:nth-last-child(2) .exp-col {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+.experience .exp-col span {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.experience .exp-col span::before {
+    position: absolute;
+    content: "";
+    width: 11px;
+    height: 11px;
+    background: #183153;
+    top: 5px;
+    left: -26px;
+    border-radius: 5px;
+}
+
+.experience .exp-col span i {
+    color: #183153;
+}
+
+.experience .exp-col h3 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.experience .exp-col h4 {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.experience .exp-col h5 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.experience .exp-col p {
+    margin: 0;
+}
+
+/**********************************/
+/* Certificates */
+/**********************************/
+
+.certificates {
+    padding: 60px 30px;
+    background-color: #ffffff;
+    border-bottom: 30px solid #ffd43b;
+}
+
+.certificates .content-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.certificate-item {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 30px; /* Add space between rows */
+}
+
+.certificate-item .certificate-img {
+    width: 100%; /* Certificate image takes full column width */
+    height: 270px; /* Set a fixed height for larger display */
+    object-fit: cover; /* Ensure the image maintains proportions */
+    border: 2px solid #000000; /* Add a border for better visual appearance */
+    transition: transform 0.3s ease-in-out;
+}
+
+.certificate-item:hover .certificate-img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+.certificate-item:hover .certificate-name {
+    display: block;
+}
+
+.certificate-item:hover::after {
+    display: block;
+}
+
+.certificate-item:hover::after {
+    display: block;
+}
+
+/**********************************/
+/********** Portfolio CSS *********/
+/**********************************/
+/* Add space above the section */
+.row {
+    margin-top: 30px; /* Adjust this value as needed */
+    margin-bottom: 30px;
+  }
+
+  /* General styling for the row */
+  /* Portfolio Section */
+.portfolio {
+    padding: 60px 30px;
+    background-color: #ffffff;
+}
+
+/* General Styling for the Row */
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Image Styling */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Card Title Styling */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Card Text Styling */
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button and Icon Styling */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Button Styling */
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #183153;
+}
+.btn:hover {
+    background-color: #73bffb;
+}
+/* Responsive Grid Styling */
+@media (max-width: 768px) {
+    .row-cols-md-2 .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* For Larger Screens */
+@media (min-width: 768px) {
+    .row-cols-md-2 .col {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+}
+
+/**********************************/
+/*********** Contact CSS ***********/
+/**********************************/
+/* Contact Section Styling */
+.contact .content-inner {
+    font-size: 0;
+    border-bottom: 30px solid #ffd43b;
+}
+
+.contact .btn {
+    position: relative;
+    width: 50%;
+    padding: 15px 0;
+    color: #183153;
+    font-size: 20px;
+    background: #73bffb;
+    border-radius: 0;
+}
+
+.contact .btn:last-child {
+    color: #ffffff;
+    background: #183153;
+}
+
+.contact .btn i {
+    margin-right: 8px;
+}
+
+.contact .btn::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .3s;
+}
+
+.contact .btn:hover::after {
+    width: 100%;
+    background: rgba(255, 255, 255, .1);
+}
