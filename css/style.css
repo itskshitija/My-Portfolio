@@ -596,7 +596,7 @@ a:focus {
 
 .certificate-item .certificate-img {
     width: 100%; /* Certificate image takes full column width */
-    height: 270px; /* Set a fixed height for larger display */
+    height: 250px; /* Set a fixed height for larger display */
     object-fit: cover; /* Ensure the image maintains proportions */
     border: 2px solid #000000; /* Add a border for better visual appearance */
     transition: transform 0.3s ease-in-out;
