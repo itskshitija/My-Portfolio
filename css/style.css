@@ -321,14 +321,14 @@ a:focus {
 
 .header p {
     color: #73bffb;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .header h1 {
     color:#183153;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
 }
 
@@ -763,4 +763,38 @@ a:focus {
         font-size: 16px; /* Further reduce font size for very small screens */
         padding: 10px 0; /* Adjust padding for smaller devices */
     }
+}
+
+
+
+
+
+
+.portfolio-summary {
+    padding: 60px 30px;
+    background-color: #f9f9f9;
+}
+.summary-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+.summary-card:hover {
+    background-color: #f6d155;
+    color: #ffffff;
+}
+.summary-card h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ff6f61;
+}
+.summary-card h3:hover {
+    color: #ffffff;
+}
+.summary-card p {
+    font-size: 1rem;
+    margin: 0;
 }
