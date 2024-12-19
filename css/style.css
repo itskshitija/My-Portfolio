@@ -764,37 +764,3 @@ a:focus {
         padding: 10px 0; /* Adjust padding for smaller devices */
     }
 }
-
-
-
-
-
-
-.portfolio-summary {
-    padding: 60px 30px;
-    background-color: #f9f9f9;
-}
-.summary-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: 0.3s;
-}
-.summary-card:hover {
-    background-color: #f6d155;
-    color: #ffffff;
-}
-.summary-card h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #ff6f61;
-}
-.summary-card h3:hover {
-    color: #ffffff;
-}
-.summary-card p {
-    font-size: 1rem;
-    margin: 0;
-}
