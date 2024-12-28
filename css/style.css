@@ -604,7 +604,7 @@ a:focus {
 .certificates {
     padding: 60px 30px;
     background-color: #ffffff;
-    border-bottom: 30px solid #ffd43b;
+    border-bottom: 60px solid #ffffff;
 }
 
 .certificates .content-header {
